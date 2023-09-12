@@ -13,7 +13,7 @@ This task was created in fulfillment of the mobile stage 2 task requirements.
 
 - First, copy the following command to clone the repository onto your local machine
 
-`git clone `
+`git clone https://github.com/Mayor-Rhymes/hng-stage-2-mobile`
 
 Please make sure you have git installed on your pc, if not, use the link below
 
