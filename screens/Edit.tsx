@@ -1,4 +1,11 @@
-import { View, Text, StyleSheet, TextInput, Alert } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TextInput,
+  Alert,
+  ScrollView,
+} from "react-native";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import useInfo from "../hooks/useInfo";
 import { contextType } from "../components/InfoProvider";
@@ -30,45 +37,46 @@ export default function Edit({ route, navigation }: Props) {
       dispatch({ type: "changeGithubHandle", payload: github });
       dispatch({ type: "changeBio", payload: bio });
       navigation.goBack();
-    }  else {
-
-      if(clickCount > 10) {
-
+    } else {
+      if (clickCount > 10) {
         Alert.alert(
-            "This is getting annoying",
-            "You have pressed the edit button at least 10 times without actually making any changes",
-            [
-              {
-                text: "Ok",
-                style: "cancel",
-              },
-              { text: "Go Back", onPress: () => navigation.goBack() },
-            ]
-          );
+          "This is getting annoying",
+          "You have pressed the edit button at least 10 times without actually making any changes",
+          [
+            {
+              text: "Ok",
+              style: "cancel",
+            },
+            { text: "Go Back", onPress: () => navigation.goBack() },
+          ]
+        );
       } else {
-
         Alert.alert(
-            "No Credentials were filled",
-            "You should enter all credentials",
-            [
-              {
-                text: "Ok",
-                style: "cancel",
-              },
-              { text: "Go Back", onPress: () => navigation.goBack() },
-            ]
-          );
-          setClickCount(clickCount + 1);
-
+          "No Credentials were filled",
+          "You should enter all credentials",
+          [
+            {
+              text: "Ok",
+              style: "cancel",
+            },
+            { text: "Go Back", onPress: () => navigation.goBack() },
+          ]
+        );
+        setClickCount(clickCount + 1);
       }
-      
-
-
     }
   };
 
   return (
-    <View style={styles.container}>
+    <ScrollView
+      style={styles.container}
+      contentContainerStyle={{
+        alignItems: "center",
+        justifyContent: "center",
+        gap: 20,
+        paddingVertical: 10,
+      }}
+    >
       <Text style={styles.mainText}>This is the edit screen</Text>
 
       <TextInput
@@ -132,7 +140,7 @@ export default function Edit({ route, navigation }: Props) {
       <Button style={styles.editButton} onPress={handleEdit}>
         <Text style={{ fontSize: 20, color: "#ffffe0" }}>Edit</Text>
       </Button>
-    </View>
+    </ScrollView>
   );
 }
 
@@ -140,9 +148,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#ffffe0",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: 20,
   },
 
   mainText: {

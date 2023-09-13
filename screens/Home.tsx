@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
 import useInfo from "../hooks/useInfo";
 import { contextType } from "../components/InfoProvider";
 import Button from "../components/Button";
@@ -12,8 +12,8 @@ export default function Home({ route, navigation }: Props) {
   const { fullName, slackUsername, githubHandle, personalBio } = state;
 
   return (
-    <View style={styles.container}>
-
+    <ScrollView style={styles.container} contentContainerStyle={{justifyContent: "center", gap: 20, paddingVertical: 10 }}>
+      
 
       <Text style={styles.titleText}>CV View</Text>
 
@@ -44,7 +44,7 @@ export default function Home({ route, navigation }: Props) {
       >
         <Text style={{ fontSize: 20, color: "#FFFFFF", }}>Edit</Text>
       </Button>
-    </View>
+    </ScrollView>
   );
 }
 
@@ -53,8 +53,9 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#ffffe0",
     paddingHorizontal: 10,
-    justifyContent: "center",
+    // justifyContent: "center",
     gap: 20,
+    
   },
 
   titleText: {
