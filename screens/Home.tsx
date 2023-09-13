@@ -12,11 +12,17 @@ export default function Home({ route, navigation }: Props) {
   const { fullName, slackUsername, githubHandle, personalBio } = state;
 
   return (
-    <ScrollView style={styles.container} contentContainerStyle={{justifyContent: "center", gap: 20, paddingVertical: 10 }}>
-      
-
+    <ScrollView
+      contentContainerStyle={{
+        flex: 1,
+        backgroundColor: "#ffffe0",
+        justifyContent: "center",
+        gap: 20,
+        paddingVertical: 10,
+        paddingHorizontal: 10,
+      }}
+    >
       <Text style={styles.titleText}>CV View</Text>
-
 
       <View style={styles.roundBox}>
         <Text style={{ fontSize: 15, color: "#65000b" }}>Fullname:</Text>
@@ -34,7 +40,7 @@ export default function Home({ route, navigation }: Props) {
       </View>
 
       <View style={styles.roundBox}>
-        <Text style={{fontSize: 15, color: "#65000b"}}>Personal Bio:</Text>
+        <Text style={{ fontSize: 15, color: "#65000b" }}>Personal Bio:</Text>
         <Text style={styles.bio}>{personalBio}</Text>
       </View>
 
@@ -42,7 +48,7 @@ export default function Home({ route, navigation }: Props) {
         style={styles.editButton}
         onPress={() => navigation.navigate("Edit")}
       >
-        <Text style={{ fontSize: 20, color: "#FFFFFF", }}>Edit</Text>
+        <Text style={{ fontSize: 20, color: "#FFFFFF" }}>Edit</Text>
       </Button>
     </ScrollView>
   );
@@ -50,26 +56,21 @@ export default function Home({ route, navigation }: Props) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "#ffffe0",
-    paddingHorizontal: 10,
     // justifyContent: "center",
     gap: 20,
-    
   },
 
   titleText: {
-    textAlign: 'center',
+    textAlign: "center",
     fontSize: 40,
     fontWeight: "bold",
-    color: "#65000b"
-    
+    color: "#65000b",
   },
 
   mainText: {
     fontSize: 20,
     fontWeight: "bold",
-    color: "#65000b"
+    color: "#65000b",
   },
 
   roundBox: {
@@ -85,7 +86,7 @@ const styles = StyleSheet.create({
     padding: 20,
     fontSize: 16,
     lineHeight: 20,
-    color: "#65000b"
+    color: "#65000b",
   },
 
   editButton: {
@@ -98,6 +99,5 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 10,
-    
   },
 });

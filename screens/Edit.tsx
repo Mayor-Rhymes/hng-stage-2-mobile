@@ -69,13 +69,8 @@ export default function Edit({ route, navigation }: Props) {
 
   return (
     <ScrollView
-      style={styles.container}
-      contentContainerStyle={{
-        alignItems: "center",
-        justifyContent: "center",
-        gap: 20,
-        paddingVertical: 10,
-      }}
+      
+      contentContainerStyle={{flex: 1, backgroundColor: "#ffffe0", justifyContent: "center", alignItems: "center", gap: 20, }}
     >
       <Text style={styles.mainText}>This is the edit screen</Text>
 
@@ -147,7 +142,11 @@ export default function Edit({ route, navigation }: Props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#ffffe0",
+    
+    
+    
+    
+    
   },
 
   mainText: {
