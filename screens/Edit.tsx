@@ -70,7 +70,7 @@ export default function Edit({ route, navigation }: Props) {
   return (
     <ScrollView
       
-      contentContainerStyle={{flex: 1, backgroundColor: "#ffffe0", justifyContent: "center", alignItems: "center", gap: 20, }}
+      contentContainerStyle={{flexGrow: 1, backgroundColor: "#ffffe0", justifyContent: "center", alignItems: "center", gap: 20, paddingVertical: 10 }}
     >
       <Text style={styles.mainText}>This is the edit screen</Text>
 

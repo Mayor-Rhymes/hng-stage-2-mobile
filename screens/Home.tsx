@@ -14,7 +14,7 @@ export default function Home({ route, navigation }: Props) {
   return (
     <ScrollView
       contentContainerStyle={{
-        flex: 1,
+        flexGrow: 1,
         backgroundColor: "#ffffe0",
         justifyContent: "center",
         gap: 20,
